@@ -156,19 +156,19 @@
         }
         
         .progress-text {
-            font-size: 1.4rem;
+            font-size: 2.4rem;
             font-weight: bold;
+	    color: white;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            padding: 5px 25px;
+            border-radius: 50px;
             text-align: center;
-            flex: 1;
-            min-width: 100%;
-            margin-bottom: 10px;
+	    margin: 0 auto 10px auto; /* center and add bottom margin */
+	    width: fit-content; /* shrink to content */
         }
         
         .progress-stats {
-            font-size: 1.2rem;
+            font-size: 2.2rem;
             color: #feb47b;
             text-align: center;
             min-width: 100%;
@@ -852,12 +852,17 @@
             
             // Progress messages at 20% intervals
             const progressMessages = [
-                { percent: 0, text: "Beginner – Just beginning your anime journey!" },
-                { percent: 20, text: "Enthusiast – You've explored a fair amount already!" },
-                { percent: 40, text: "Growing Fan – Making steady progress, well on your way!" },
-                { percent: 60, text: "Experienced Viewer – You’ve watched quite a bit!" },
-                { percent: 80, text: "Dedicated Fan – Nearly there, your passion shows!" },
-                { percent: 100, text: "Anime Connoisseur – An impressive feat, you’ve seen it all!" }
+		     { percent: 0, text: "Novice Watcher" },
+		     { percent: 10, text: "Anime Rookie" },
+		     { percent: 20, text: "Seasoned Watcher" },
+		     { percent: 30, text: "Anime Enthusiast" },
+		     { percent: 40, text: "Anime Connoisseur" },
+		     { percent: 50, text: "Weeb" },
+		     { percent: 60, text: "Advanced Weeb" },
+		     { percent: 70, text: "Anime Sage" },
+		     { percent: 80, text: "Anime Master" },
+		     { percent: 90, text: "Anime Legend" },
+		     { percent: 100, text: "Anime God" }
             ];
             
             // Anime data with numbered titles only (2006-2024)
