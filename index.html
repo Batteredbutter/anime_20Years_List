@@ -6,6 +6,11 @@
     <title>Anime Progress Tracker</title>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
+        :root {
+            --anime-title-unselected: #ffffff; /* Default text color */
+            --anime-title-selected: #ffffff;   /* Text color when selected */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -41,11 +46,25 @@
         header {
             text-align: center;
             margin-bottom: 30px;
-            padding: 20px;
+            padding: 15px;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(5px);
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .title-container {
+            flex: 1;
+            min-width: 300px;
         }
         
         h1 {
@@ -55,6 +74,27 @@
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        
+        .profile-pic {
+            width: 128px;
+            height: 128px;
+            border-radius: 0%;
+            border: 0px solid #8e2de2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.0);
+            transition: all 0.3s ease;
+        }
+        
+		.profile-pic:hover img {
+			filter: drop-shadow(0 0 8px rgba(198, 154, 119, 0.7)) brightness(1.1);
+			transform: scale(1.05);
+			transition: filter 0.3s ease, transform 0.3s ease;
+		}
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .subtitle {
@@ -99,7 +139,6 @@
             background: linear-gradient(to right, #00b09b, #96c93d);
         }
         
-        /* Progress Section */
         .progress-section {
             background: rgba(20, 20, 40, 0.7);
             border-radius: 10px;
@@ -142,13 +181,11 @@
             border-radius: 15px;
             overflow: hidden;
             position: relative;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.0);
         }
         
         .progress-bar {
             height: 100%;
             background: linear-gradient(to right, #4a00e0, #8e2de2);
-            border-radius: 15px;
             width: 0%;
             transition: width 0.5s ease;
             box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
@@ -175,7 +212,6 @@
             100% { transform: translateX(100%); }
         }
         
-        /* Grid Container */
         .grid-container {
             background: rgba(20, 20, 40, 0.7);
             border-radius: 10px;
@@ -257,6 +293,11 @@
             line-height: 1.3;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
             padding: 0 5px;
+            color: var(--anime-title-unselected);
+        }
+        
+        .anime-item.checked .anime-title {
+            color: var(--anime-title-selected);
         }
         
         footer {
@@ -293,7 +334,36 @@
             display: none;
         }
         
-        /* Responsive design */
+        .color-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .color-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(40, 40, 80, 0.7);
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+        
+        .color-control label {
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .color-control input {
+            width: 60px;
+            height: 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
         @media (max-width: 768px) {
             .year-row {
                 flex-direction: column;
@@ -322,6 +392,15 @@
                 width: 100%;
                 max-width: 300px;
             }
+            
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -331,9 +410,27 @@
     
     <div class="container">
         <header>
-            <h1>20 Years of Anime: How Many Have You Seen?</h1>
-            <p class="subtitle">Select how many anime from each year you've finished watching</p>
+            <div class="header-content">
+				<a href="https://anilist.co/user/Batteredbutter/" id="profileLink" class="profile-pic" target="_blank">
+					<img src="https://i.imgur.com/Z5JT0Sa.png" alt="Your Profile">
+				</a>
+                <div class="title-container">
+                    <h1>20 Years of Anime: How Many Have You Seen?</h1>
+                    <p class="subtitle">Select how many anime from each year you've finished watching</p>
+                </div>
+            </div>
         </header>
+        
+        <div class="color-controls">
+            <div class="color-control">
+                <label for="unselectedColor">Unselected Text:</label>
+                <input type="color" id="unselectedColor" value="#ffffff">
+            </div>
+            <div class="color-control">
+                <label for="selectedColor">Selected Text:</label>
+                <input type="color" id="selectedColor" value="#ffffff">
+            </div>
+        </div>
         
         <div class="controls">
             <button id="selectAllBtn" class="btn">Select All Anime</button>
@@ -749,6 +846,9 @@
             const progressStats = document.getElementById('progressStats');
             const progressSection = document.getElementById('progressSection');
             const exportStatus = document.getElementById('exportStatus');
+            const profileLink = document.getElementById('profileLink');
+            const unselectedColorInput = document.getElementById('unselectedColor');
+            const selectedColorInput = document.getElementById('selectedColor');
             
             // Progress messages at 20% intervals
             const progressMessages = [
@@ -1247,14 +1347,26 @@
                 animate();
             }
             
+            // Update text colors
+            function updateTextColors() {
+                document.documentElement.style.setProperty('--anime-title-unselected', unselectedColorInput.value);
+                document.documentElement.style.setProperty('--anime-title-selected', selectedColorInput.value);
+            }
+            
             // Event listeners
             selectAllBtn.addEventListener('click', selectAllAnime);
             deselectAllBtn.addEventListener('click', deselectAllAnime);
             saveImageBtn.addEventListener('click', saveAsTwoImages);
+            unselectedColorInput.addEventListener('input', updateTextColors);
+            selectedColorInput.addEventListener('input', updateTextColors);
             
             // Initialize the app
             generateAnimeGrid();
             initEmberEffect();
+            
+			// Set profile link
+			profileLink.href = "https://anilist.co/user/Batteredbutter/";
+			profileLink.title = "Batteredbutter's AniList Profile";
         });
     </script>
 </body>
