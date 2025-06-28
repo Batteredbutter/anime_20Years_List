@@ -335,6 +335,7 @@
         }
         
         .color-controls {
+		    visibility: hidden;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -420,7 +421,7 @@
                 </div>
             </div>
         </header>
-        
+     
         <div class="color-controls">
             <div class="color-control">
                 <label for="unselectedColor">Unselected Text:</label>
@@ -431,7 +432,7 @@
                 <input type="color" id="selectedColor" value="#ffffff">
             </div>
         </div>
-        
+       
         <div class="controls">
             <button id="selectAllBtn" class="btn">Select All Anime</button>
             <button id="deselectAllBtn" class="btn">Deselect All Anime</button>
