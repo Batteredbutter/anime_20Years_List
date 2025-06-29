@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime I've Watched - Template</title>
+    <title>20 Years of Anime: How Many Have You Seen?</title>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         :root {
-            --anime-title-unselected: #ffffff; /* Default text color */
-            --anime-title-selected: #ffffff;   /* Text color when selected */
+            --anime-title-unselected: #ffffff;
+            --anime-title-selected: #ffffff;
         }
 
         * {
@@ -84,11 +84,11 @@
             transition: all 0.3s ease;
         }
         
-		.profile-pic:hover img {
-			filter: drop-shadow(0 0 8px rgba(198, 154, 119, 0.7)) brightness(1.1);
-			transform: scale(1.05);
-			transition: filter 0.3s ease, transform 0.3s ease;
-		}
+        .profile-pic:hover img {
+            filter: drop-shadow(0 0 8px rgba(198, 154, 119, 0.7)) brightness(1.1);
+            transform: scale(1.05);
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
         
         .profile-pic img {
             width: 100%;
@@ -158,13 +158,13 @@
         .progress-text {
             font-size: 2.4rem;
             font-weight: bold;
-	    color: white;
+            color: white;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             padding: 5px 25px;
             border-radius: 50px;
             text-align: center;
-	    margin: 0 auto 10px auto; /* center and add bottom margin */
-	    width: fit-content; /* shrink to content */
+            margin: 0 auto 10px auto;
+            width: fit-content;
         }
         
         .progress-stats {
@@ -311,6 +311,7 @@
         
         .footer-link {
             color: #27ae60;
+            text-decoration: none;
         }
 
         .save-container {
@@ -331,37 +332,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             display: none;
-        }
-        
-        .color-controls {
-		    visibility: hidden;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .color-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(40, 40, 80, 0.7);
-            padding: 10px 15px;
-            border-radius: 8px;
-        }
-        
-        .color-control label {
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-        
-        .color-control input {
-            width: 60px;
-            height: 30px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
         }
         
         @media (max-width: 768px) {
@@ -411,27 +381,16 @@
     <div class="container">
         <header>
             <div class="header-content">
-				<a href="https://anilist.co/user/Batteredbutter/" id="profileLink" class="profile-pic" target="_blank">
-					<img src="https://i.imgur.com/Z5JT0Sa.png" alt="Your Profile">
-				</a>
+                <a href="https://anilist.co/user/Batteredbutter/" id="profileLink" class="profile-pic" target="_blank" title="Batteredbutter's AniList Profile">
+                    <img src="https://s4.anilist.co/file/anilistcdn/user/avatar/large/b6872033-4PJ8DmFAtNyv.png" alt="Your Profile">
+                </a>
                 <div class="title-container">
                     <h1>20 Years of Anime: How Many Have You Seen?</h1>
                     <p class="subtitle">Select how many anime from each year you've finished watching</p>
                 </div>
             </div>
         </header>
-     
-        <div class="color-controls">
-            <div class="color-control">
-                <label for="unselectedColor">Unselected Text:</label>
-                <input type="color" id="unselectedColor" value="#ffffff">
-            </div>
-            <div class="color-control">
-                <label for="selectedColor">Selected Text:</label>
-                <input type="color" id="selectedColor" value="#ffffff">
-            </div>
-        </div>
-       
+        
         <div class="controls">
             <button id="selectAllBtn" class="btn">Select All Anime</button>
             <button id="deselectAllBtn" class="btn">Deselect All Anime</button>
@@ -440,395 +399,15 @@
         
         <div class="progress-section" id="progressSection">
             <div class="progress-header">
-                <div class="progress-text" id="progressText">Beginner – Just beginning your anime journey!</div>
-                <div class="progress-stats" id="progressStats">0 of 190 completed (0%)</div>
+                <div class="progress-text" id="progressText">Novice Watcher</div>
+                <div class="progress-stats" id="progressStats">0 of 200 completed (0%)</div>
             </div>
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
             </div>
         </div>
          
-        <div class="grid-container" id="gridContainer"><div class="year-row"><div class="year-label">2006</div><div class="anime-grid"><div class="anime-item" data-year="2006" data-index="0">
-                            <div class="anime-title">Code Geass</div>
-                        </div><div class="anime-item" data-year="2006" data-index="1">
-                            <div class="anime-title">D.Gray-man</div>
-                        </div><div class="anime-item" data-year="2006" data-index="2">
-                            <div class="anime-title">Death Note</div>
-                        </div><div class="anime-item" data-year="2006" data-index="3">
-                            <div class="anime-title">Ergo Proxy</div>
-                        </div><div class="anime-item" data-year="2006" data-index="4">
-                            <div class="anime-title">Gintama</div>
-                        </div><div class="anime-item" data-year="2006" data-index="5">
-                            <div class="anime-title">Higurashi</div>
-                        </div><div class="anime-item" data-year="2006" data-index="6">
-                            <div class="anime-title">Mushishi</div>
-                        </div><div class="anime-item" data-year="2006" data-index="7">
-                            <div class="anime-title">NANA</div>
-                        </div><div class="anime-item" data-year="2006" data-index="8">
-                            <div class="anime-title">The Melancholy of Haruhi Suzumiya</div>
-                        </div><div class="anime-item" data-year="2006" data-index="9">
-                            <div class="anime-title">Welcome to the NHK</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2007</div><div class="anime-grid"><div class="anime-item" data-year="2007" data-index="0">
-                            <div class="anime-title">Baccano!</div>
-                        </div><div class="anime-item" data-year="2007" data-index="1">
-                            <div class="anime-title">CLANNAD</div>
-                        </div><div class="anime-item" data-year="2007" data-index="2">
-                            <div class="anime-title">DARKER THAN BLACK</div>
-                        </div><div class="anime-item" data-year="2007" data-index="3">
-                            <div class="anime-title">Dennou Coil</div>
-                        </div><div class="anime-item" data-year="2007" data-index="4">
-                            <div class="anime-title">ef: a tale of memories.</div>
-                        </div><div class="anime-item" data-year="2007" data-index="5">
-                            <div class="anime-title">Gurren Lagann</div>
-                        </div><div class="anime-item" data-year="2007" data-index="6">
-                            <div class="anime-title">Kaiji Ultimate Survivor</div>
-                        </div><div class="anime-item" data-year="2007" data-index="7">
-                            <div class="anime-title">Lovely Complex</div>
-                        </div><div class="anime-item" data-year="2007" data-index="8">
-                            <div class="anime-title">Mononoke</div>
-                        </div><div class="anime-item" data-year="2007" data-index="9">
-                            <div class="anime-title">Nodame Cantabile</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2008</div><div class="anime-grid"><div class="anime-item" data-year="2008" data-index="0">
-                            <div class="anime-title">A Certain Magical Index</div>
-                        </div><div class="anime-item" data-year="2008" data-index="1">
-                            <div class="anime-title">Black Butler</div>
-                        </div><div class="anime-item" data-year="2008" data-index="2">
-                            <div class="anime-title">Kaiba</div>
-                        </div><div class="anime-item" data-year="2008" data-index="3">
-                            <div class="anime-title">Kannagi</div>
-                        </div><div class="anime-item" data-year="2008" data-index="4">
-                            <div class="anime-title">Macross Frontier</div>
-                        </div><div class="anime-item" data-year="2008" data-index="5">
-                            <div class="anime-title">Minami-ke</div>
-                        </div><div class="anime-item" data-year="2008" data-index="6">
-                            <div class="anime-title">Natsume's Book of Friends</div>
-                        </div><div class="anime-item" data-year="2008" data-index="7">
-                            <div class="anime-title">Soul Eater</div>
-                        </div><div class="anime-item" data-year="2008" data-index="8">
-                            <div class="anime-title">Spice and Wolf (2008/2024)</div>
-                        </div><div class="anime-item" data-year="2008" data-index="9">
-                            <div class="anime-title">Toradora!</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2009</div><div class="anime-grid"><div class="anime-item" data-year="2009" data-index="0">
-                            <div class="anime-title">A Certain Scientific Railgun</div>
-                        </div><div class="anime-item" data-year="2009" data-index="1">
-                            <div class="anime-title">Bakemonogatari</div>
-                        </div><div class="anime-item" data-year="2009" data-index="2">
-                            <div class="anime-title">Cross Game</div>
-                        </div><div class="anime-item" data-year="2009" data-index="3">
-                            <div class="anime-title">Fairy Tail</div>
-                        </div><div class="anime-item" data-year="2009" data-index="4">
-                            <div class="anime-title">Fullmetal Alchemist: Brotherhood</div>
-                        </div><div class="anime-item" data-year="2009" data-index="5">
-                            <div class="anime-title">K-ON!</div>
-                        </div><div class="anime-item" data-year="2009" data-index="6">
-                            <div class="anime-title">Kimi ni Todoke</div>
-                        </div><div class="anime-item" data-year="2009" data-index="7">
-                            <div class="anime-title">Kobato</div>
-                        </div><div class="anime-item" data-year="2009" data-index="8">
-                            <div class="anime-title">Student Council's Discretion</div>
-                        </div><div class="anime-item" data-year="2009" data-index="9">
-                            <div class="anime-title">Tokyo Magnitude 8.0</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2010</div><div class="anime-grid"><div class="anime-item" data-year="2010" data-index="0">
-                            <div class="anime-title">Angel Beats!</div>
-                        </div><div class="anime-item" data-year="2010" data-index="1">
-                            <div class="anime-title">Bakuman.</div>
-                        </div><div class="anime-item" data-year="2010" data-index="2">
-                            <div class="anime-title">Durarara!!</div>
-                        </div><div class="anime-item" data-year="2010" data-index="3">
-                            <div class="anime-title">Katanagatari</div>
-                        </div><div class="anime-item" data-year="2010" data-index="4">
-                            <div class="anime-title">Maid-Sama!</div>
-                        </div><div class="anime-item" data-year="2010" data-index="5">
-                            <div class="anime-title">Panty &amp; Stocking with Garterbelt</div>
-                        </div><div class="anime-item" data-year="2010" data-index="6">
-                            <div class="anime-title">Rainbow</div>
-                        </div><div class="anime-item" data-year="2010" data-index="7">
-                            <div class="anime-title">Shiki</div>
-                        </div><div class="anime-item" data-year="2010" data-index="8">
-                            <div class="anime-title">Sound of the Sky</div>
-                        </div><div class="anime-item" data-year="2010" data-index="9">
-                            <div class="anime-title">The Tatami Galaxy</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2011</div><div class="anime-grid"><div class="anime-item" data-year="2011" data-index="0">
-                            <div class="anime-title">AnoHana</div>
-                        </div><div class="anime-item" data-year="2011" data-index="1">
-                            <div class="anime-title">Chihayafuru</div>
-                        </div><div class="anime-item" data-year="2011" data-index="2">
-                            <div class="anime-title">Fate/Zero</div>
-                        </div><div class="anime-item" data-year="2011" data-index="3">
-                            <div class="anime-title">GOSICK</div>
-                        </div><div class="anime-item" data-year="2011" data-index="4">
-                            <div class="anime-title">Guilty Crown</div>
-                        </div><div class="anime-item" data-year="2011" data-index="5">
-                            <div class="anime-title">HUNTERxHUNTER</div>
-                        </div><div class="anime-item" data-year="2011" data-index="6">
-                            <div class="anime-title">Nichijou</div>
-                        </div><div class="anime-item" data-year="2011" data-index="7">
-                            <div class="anime-title">Puella Magi Madoka Magica</div>
-                        </div><div class="anime-item" data-year="2011" data-index="8">
-                            <div class="anime-title">Steins;Gate</div>
-                        </div><div class="anime-item" data-year="2011" data-index="9">
-                            <div class="anime-title">THE IDOLM@STER</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2012</div><div class="anime-grid"><div class="anime-item" data-year="2012" data-index="0">
-                            <div class="anime-title">Another</div>
-                        </div><div class="anime-item" data-year="2012" data-index="1">
-                            <div class="anime-title">From the New World</div>
-                        </div><div class="anime-item" data-year="2012" data-index="2">
-                            <div class="anime-title">Girls und Panzer</div>
-                        </div><div class="anime-item" data-year="2012" data-index="3">
-                            <div class="anime-title">Hyouka</div>
-                        </div><div class="anime-item" data-year="2012" data-index="4">
-                            <div class="anime-title">JoJo's Bizarre Adventure</div>
-                        </div><div class="anime-item" data-year="2012" data-index="5">
-                            <div class="anime-title">Kokoro Connect</div>
-                        </div><div class="anime-item" data-year="2012" data-index="6">
-                            <div class="anime-title">Love, Chunibyo &amp; Other Delusions</div>
-                        </div><div class="anime-item" data-year="2012" data-index="7">
-                            <div class="anime-title">PSYCHOPASS</div>
-                        </div><div class="anime-item" data-year="2012" data-index="8">
-                            <div class="anime-title">Sword Art Online</div>
-                        </div><div class="anime-item" data-year="2012" data-index="9">
-                            <div class="anime-title">The Pet Girl of Sakurasou</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2013</div><div class="anime-grid"><div class="anime-item" data-year="2013" data-index="0">
-                            <div class="anime-title">Attack on Titan</div>
-                        </div><div class="anime-item" data-year="2013" data-index="1">
-                            <div class="anime-title">Free!</div>
-                        </div><div class="anime-item" data-year="2013" data-index="2">
-                            <div class="anime-title">Golden Time</div>
-                        </div><div class="anime-item" data-year="2013" data-index="3">
-                            <div class="anime-title">Kill la Kill</div>
-                        </div><div class="anime-item" data-year="2013" data-index="4">
-                            <div class="anime-title">Kyousougiga</div>
-                        </div><div class="anime-item" data-year="2013" data-index="5">
-                            <div class="anime-title">Log Horizon</div>
-                        </div><div class="anime-item" data-year="2013" data-index="6">
-                            <div class="anime-title">Love Live! School idol project</div>
-                        </div><div class="anime-item" data-year="2013" data-index="7">
-                            <div class="anime-title">Non Non Biyori</div>
-                        </div><div class="anime-item" data-year="2013" data-index="8">
-                            <div class="anime-title">Oregairu</div>
-                        </div><div class="anime-item" data-year="2013" data-index="9">
-                            <div class="anime-title">WataMote</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2014</div><div class="anime-grid"><div class="anime-item" data-year="2014" data-index="0">
-                            <div class="anime-title">Haikyuu!!</div>
-                        </div><div class="anime-item" data-year="2014" data-index="1">
-                            <div class="anime-title">Is the Order a Rabbit?</div>
-                        </div><div class="anime-item" data-year="2014" data-index="2">
-                            <div class="anime-title">No Game No Life</div>
-                        </div><div class="anime-item" data-year="2014" data-index="3">
-                            <div class="anime-title">Noragami</div>
-                        </div><div class="anime-item" data-year="2014" data-index="4">
-                            <div class="anime-title">Parasyte: the maxim</div>
-                        </div><div class="anime-item" data-year="2014" data-index="5">
-                            <div class="anime-title">SHIROBAKO</div>
-                        </div><div class="anime-item" data-year="2014" data-index="6">
-                            <div class="anime-title">Terror in Resonance</div>
-                        </div><div class="anime-item" data-year="2014" data-index="7">
-                            <div class="anime-title">The Seven Deadly Sins</div>
-                        </div><div class="anime-item" data-year="2014" data-index="8">
-                            <div class="anime-title">Tokyo Ghoul</div>
-                        </div><div class="anime-item" data-year="2014" data-index="9">
-                            <div class="anime-title">Your lie in April</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2015</div><div class="anime-grid"><div class="anime-item" data-year="2015" data-index="0">
-                            <div class="anime-title">Assassination Classroom</div>
-                        </div><div class="anime-item" data-year="2015" data-index="1">
-                            <div class="anime-title">Charlotte</div>
-                        </div><div class="anime-item" data-year="2015" data-index="2">
-                            <div class="anime-title">Death Parade</div>
-                        </div><div class="anime-item" data-year="2015" data-index="3">
-                            <div class="anime-title">Food Wars!</div>
-                        </div><div class="anime-item" data-year="2015" data-index="4">
-                            <div class="anime-title">Go! Princess Precure</div>
-                        </div><div class="anime-item" data-year="2015" data-index="5">
-                            <div class="anime-title">Hibike! Euphonium</div>
-                        </div><div class="anime-item" data-year="2015" data-index="6">
-                            <div class="anime-title">One Punch Man</div>
-                        </div><div class="anime-item" data-year="2015" data-index="7">
-                            <div class="anime-title">Overlord</div>
-                        </div><div class="anime-item" data-year="2015" data-index="8">
-                            <div class="anime-title">Plastic Memories</div>
-                        </div><div class="anime-item" data-year="2015" data-index="9">
-                            <div class="anime-title">Saekano:How to Raise a Boring Girlfriend</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2016</div><div class="anime-grid"><div class="anime-item" data-year="2016" data-index="0">
-                            <div class="anime-title">Bungou Stray Dogs</div>
-                        </div><div class="anime-item" data-year="2016" data-index="1">
-                            <div class="anime-title">ERASED</div>
-                        </div><div class="anime-item" data-year="2016" data-index="2">
-                            <div class="anime-title">Flying Witch</div>
-                        </div><div class="anime-item" data-year="2016" data-index="3">
-                            <div class="anime-title">Konosuba</div>
-                        </div><div class="anime-item" data-year="2016" data-index="4">
-                            <div class="anime-title">March comes in like a lion</div>
-                        </div><div class="anime-item" data-year="2016" data-index="5">
-                            <div class="anime-title">Mob Psycho 100</div>
-                        </div><div class="anime-item" data-year="2016" data-index="6">
-                            <div class="anime-title">My Hero Academia</div>
-                        </div><div class="anime-item" data-year="2016" data-index="7">
-                            <div class="anime-title">Re:Zero</div>
-                        </div><div class="anime-item" data-year="2016" data-index="8">
-                            <div class="anime-title">ReLIFE</div>
-                        </div><div class="anime-item" data-year="2016" data-index="9">
-                            <div class="anime-title">The Disastrous Life of Saiki K.</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2017</div><div class="anime-grid"><div class="anime-item" data-year="2017" data-index="0">
-                            <div class="anime-title">Black Clover</div>
-                        </div><div class="anime-item" data-year="2017" data-index="1">
-                            <div class="anime-title">Girls' Last Tour</div>
-                        </div><div class="anime-item" data-year="2017" data-index="2">
-                            <div class="anime-title">Kakegurui</div>
-                        </div><div class="anime-item" data-year="2017" data-index="3">
-                            <div class="anime-title">Land of the Lustrous</div>
-                        </div><div class="anime-item" data-year="2017" data-index="4">
-                            <div class="anime-title">Little Witch Academia</div>
-                        </div><div class="anime-item" data-year="2017" data-index="5">
-                            <div class="anime-title">Made in Abyss</div>
-                        </div><div class="anime-item" data-year="2017" data-index="6">
-                            <div class="anime-title">Miss Kobayashi's Dragon Maid</div>
-                        </div><div class="anime-item" data-year="2017" data-index="7">
-                            <div class="anime-title">Princess Principal</div>
-                        </div><div class="anime-item" data-year="2017" data-index="8">
-                            <div class="anime-title">The Ancient Magus’ Bride</div>
-                        </div><div class="anime-item" data-year="2017" data-index="9">
-                            <div class="anime-title">The Saga of Tanya the Evil</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2018</div><div class="anime-grid"><div class="anime-item" data-year="2018" data-index="0">
-                            <div class="anime-title">A Place Further Than the Universe</div>
-                        </div><div class="anime-item" data-year="2018" data-index="1">
-                            <div class="anime-title">Bloom Into You</div>
-                        </div><div class="anime-item" data-year="2018" data-index="2">
-                            <div class="anime-title">Bunny Girl Senpai</div>
-                        </div><div class="anime-item" data-year="2018" data-index="3">
-                            <div class="anime-title">Darling in the Franxx</div>
-                        </div><div class="anime-item" data-year="2018" data-index="4">
-                            <div class="anime-title">Devilman Crybaby</div>
-                        </div><div class="anime-item" data-year="2018" data-index="5">
-                            <div class="anime-title">Hinamatsuri</div>
-                        </div><div class="anime-item" data-year="2018" data-index="6">
-                            <div class="anime-title">TenSura</div>
-                        </div><div class="anime-item" data-year="2018" data-index="7">
-                            <div class="anime-title">Uma Musume: Pretty Derby</div>
-                        </div><div class="anime-item" data-year="2018" data-index="8">
-                            <div class="anime-title">Violet Evergarden</div>
-                        </div><div class="anime-item" data-year="2018" data-index="9">
-                            <div class="anime-title">Yuru Camp△</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2019</div><div class="anime-grid"><div class="anime-item" data-year="2019" data-index="0">
-                            <div class="anime-title">Demon Slayer</div>
-                        </div><div class="anime-item" data-year="2019" data-index="1">
-                            <div class="anime-title">Dororo</div>
-                        </div><div class="anime-item" data-year="2019" data-index="2">
-                            <div class="anime-title">Dr. Stone</div>
-                        </div><div class="anime-item" data-year="2019" data-index="3">
-                            <div class="anime-title">Fire Force</div>
-                        </div><div class="anime-item" data-year="2019" data-index="4">
-                            <div class="anime-title">Fruits Basket</div>
-                        </div><div class="anime-item" data-year="2019" data-index="5">
-                            <div class="anime-title">Given </div>
-                        </div><div class="anime-item" data-year="2019" data-index="6">
-                            <div class="anime-title">Kaguya-sama: Love is War</div>
-                        </div><div class="anime-item" data-year="2019" data-index="7">
-                            <div class="anime-title">Machikado Mazoku</div>
-                        </div><div class="anime-item" data-year="2019" data-index="8">
-                            <div class="anime-title">The Promised Neverland</div>
-                        </div><div class="anime-item" data-year="2019" data-index="9">
-                            <div class="anime-title">Vinland Saga</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2020</div><div class="anime-grid"><div class="anime-item" data-year="2020" data-index="0">
-                            <div class="anime-title">Akudama Drive</div>
-                        </div><div class="anime-item" data-year="2020" data-index="1">
-                            <div class="anime-title">Dorohedoro</div>
-                        </div><div class="anime-item" data-year="2020" data-index="2">
-                            <div class="anime-title">ID: INVADED</div>
-                        </div><div class="anime-item" data-year="2020" data-index="3">
-                            <div class="anime-title">Jujutsu Kaisen</div>
-                        </div><div class="anime-item" data-year="2020" data-index="4">
-                            <div class="anime-title">Kakushigoto</div>
-                        </div><div class="anime-item" data-year="2020" data-index="5">
-                            <div class="anime-title">Keep Your Hands Off Eizouken!</div>
-                        </div><div class="anime-item" data-year="2020" data-index="6">
-                            <div class="anime-title">Wandering Witch: The Journey of Elaina</div>
-                        </div><div class="anime-item" data-year="2020" data-index="7">
-                            <div class="anime-title">Moriarty the Patriot</div>
-                        </div><div class="anime-item" data-year="2020" data-index="8">
-                            <div class="anime-title">Toilet-bound Hanako-kun</div>
-                        </div><div class="anime-item" data-year="2020" data-index="9">
-                            <div class="anime-title">TONIKAWA: Over The Moon For You</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2021</div><div class="anime-grid"><div class="anime-item" data-year="2021" data-index="0">
-                            <div class="anime-title">86: Eighty Six</div>
-                        </div><div class="anime-item" data-year="2021" data-index="1">
-                            <div class="anime-title">Horimiya</div>
-                        </div><div class="anime-item" data-year="2021" data-index="2">
-                            <div class="anime-title">Komi Can’t Communicate</div>
-                        </div><div class="anime-item" data-year="2021" data-index="3">
-                            <div class="anime-title">Mushoku Tensei</div>
-                        </div><div class="anime-item" data-year="2021" data-index="4">
-                            <div class="anime-title">Ousama Ranking</div>
-                        </div><div class="anime-item" data-year="2021" data-index="5">
-                            <div class="anime-title">Shadows House</div>
-                        </div><div class="anime-item" data-year="2021" data-index="6">
-                            <div class="anime-title">The Case Study of Vanitas</div>
-                        </div><div class="anime-item" data-year="2021" data-index="7">
-                            <div class="anime-title">To Your Eternity</div>
-                        </div><div class="anime-item" data-year="2021" data-index="8">
-                            <div class="anime-title">Tokyo Revengers</div>
-                        </div><div class="anime-item" data-year="2021" data-index="9">
-                            <div class="anime-title">Vivy: Fluorite Eye’s Song</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2022</div><div class="anime-grid"><div class="anime-item" data-year="2022" data-index="0">
-                            <div class="anime-title">Bocchi the Rock!</div>
-                        </div><div class="anime-item" data-year="2022" data-index="1">
-                            <div class="anime-title">Call of the Night</div>
-                        </div><div class="anime-item" data-year="2022" data-index="2">
-                            <div class="anime-title">Chainsaw Man</div>
-                        </div><div class="anime-item" data-year="2022" data-index="3">
-                            <div class="anime-title">Cyberpunk: Edgerunners</div>
-                        </div><div class="anime-item" data-year="2022" data-index="4">
-                            <div class="anime-title">Do It Yourself!!</div>
-                        </div><div class="anime-item" data-year="2022" data-index="5">
-                            <div class="anime-title">Lycoris Recoil</div>
-                        </div><div class="anime-item" data-year="2022" data-index="6">
-                            <div class="anime-title">My Dress-Up Darling</div>
-                        </div><div class="anime-item" data-year="2022" data-index="7">
-                            <div class="anime-title">Spy x Family</div>
-                        </div><div class="anime-item" data-year="2022" data-index="8">
-                            <div class="anime-title">Summer Time Rendering</div>
-                        </div><div class="anime-item" data-year="2022" data-index="9">
-                            <div class="anime-title">The Eminence in Shadow</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2023</div><div class="anime-grid"><div class="anime-item" data-year="2023" data-index="0">
-                            <div class="anime-title">BanG Dream! It's MyGO!!!!!</div>
-                        </div><div class="anime-item" data-year="2023" data-index="1">
-                            <div class="anime-title">Frieren: Beyond Journey’s End</div>
-                        </div><div class="anime-item" data-year="2023" data-index="2">
-                            <div class="anime-title">Heavenly Delusion</div>
-                        </div><div class="anime-item" data-year="2023" data-index="3">
-                            <div class="anime-title">I'm in Love with the Villainess</div>
-                        </div><div class="anime-item" data-year="2023" data-index="4">
-                            <div class="anime-title">Insomniacs After School</div>
-                        </div><div class="anime-item" data-year="2023" data-index="5">
-                            <div class="anime-title">Oshi no Ko</div>
-                        </div><div class="anime-item" data-year="2023" data-index="6">
-                            <div class="anime-title">Skip to Loafer</div>
-                        </div><div class="anime-item" data-year="2023" data-index="7">
-                            <div class="anime-title">The Apothecary Diaries</div>
-                        </div><div class="anime-item" data-year="2023" data-index="8">
-                            <div class="anime-title">The Dangers in My Heart</div>
-                        </div><div class="anime-item" data-year="2023" data-index="9">
-                            <div class="anime-title">Tomo-chan Is a Girl!</div>
-                        </div></div></div><div class="year-row"><div class="year-label">2024</div><div class="anime-grid"><div class="anime-item" data-year="2024" data-index="0">
-                            <div class="anime-title">7th Time Loop</div>
-                        </div><div class="anime-item" data-year="2024" data-index="1">
-                            <div class="anime-title">Dandadan</div>
-                        </div><div class="anime-item" data-year="2024" data-index="2">
-                            <div class="anime-title">Dungeon Meshi</div>
-                        </div><div class="anime-item" data-year="2024" data-index="3">
-                            <div class="anime-title">GIRLS BAND CRY</div>
-                        </div><div class="anime-item" data-year="2024" data-index="4">
-                            <div class="anime-title">Gushing over Magical Girls</div>
-                        </div><div class="anime-item" data-year="2024" data-index="5">
-                            <div class="anime-title">Makeine: Too Many Losing Heroines!</div>
-                        </div><div class="anime-item" data-year="2024" data-index="6">
-                            <div class="anime-title">Orb: On the Movements of the Earth</div>
-                        </div><div class="anime-item" data-year="2024" data-index="7">
-                            <div class="anime-title">Ranma 1/2</div>
-                        </div><div class="anime-item" data-year="2024" data-index="8">
-                            <div class="anime-title">Shoushimin Series</div>
-                        </div><div class="anime-item" data-year="2024" data-index="9">
-                            <div class="anime-title">Villainess Level 99</div>
-                        </div></div></div></div>
+        <div class="grid-container" id="gridContainer"></div>
   
         <footer>
             <p>Created with ❤️ for anime fans |  <a class="footer-link" href="https://anilist.co/user/Batteredbutter/" target="_blank">Batteredbutter</a></p>
@@ -847,35 +426,45 @@
             const progressSection = document.getElementById('progressSection');
             const exportStatus = document.getElementById('exportStatus');
             const profileLink = document.getElementById('profileLink');
-            const unselectedColorInput = document.getElementById('unselectedColor');
-            const selectedColorInput = document.getElementById('selectedColor');
             
             // Progress messages at 20% intervals
             const progressMessages = [
-		     { percent: 0, text: "Novice Watcher" },
-		     { percent: 10, text: "Anime Rookie" },
-		     { percent: 20, text: "Seasoned Watcher" },
-		     { percent: 30, text: "Anime Enthusiast" },
-		     { percent: 40, text: "Anime Connoisseur" },
-		     { percent: 50, text: "Weeb" },
-		     { percent: 60, text: "Advanced Weeb" },
-		     { percent: 70, text: "Anime Sage" },
-		     { percent: 80, text: "Anime Master" },
-		     { percent: 90, text: "Anime Legend" },
-		     { percent: 100, text: "Anime God" }
+                { percent: 0, text: "Novice Watcher" },
+                { percent: 10, text: "Anime Rookie" },
+                { percent: 20, text: "Seasoned Watcher" },
+                { percent: 30, text: "Anime Enthusiast" },
+                { percent: 40, text: "Anime Connoisseur" },
+                { percent: 50, text: "Weeb" },
+                { percent: 60, text: "Advanced Weeb" },
+                { percent: 70, text: "Anime Sage" },
+                { percent: 80, text: "Anime Master" },
+                { percent: 90, text: "Anime Legend" },
+                { percent: 100, text: "Anime God" }
             ];
             
-            // Anime data with numbered titles only (2006-2024)
+            // Anime data with numbered titles only (2005-2024)
             const animeData = {
+                2005: [
+					{ title: "Akagi" },
+					{ title: "ARIA The ANIMATION" },
+					{ title: "Blood+" },
+					{ title: "Eureka Seven" },
+					{ title: "Hell Girl" },
+					{ title: "Honey and Clover" },	
+					{ title: "Magical Girl Lyrical Nanoha A's" },					
+					{ title: "Mushishi" },
+					{ title: "Shakugan no Shana" },
+					{ title: "Paradise Kiss" },
+                ],
                 2006: [
                     { title: "Code Geass" },
-                    { title: "Ouran High School Host Club" },
+					{ title: "D.Gray-man" },					
                     { title: "Death Note" },
                     { title: "Ergo Proxy" },
                     { title: "Gintama" },
                     { title: "Higurashi" },
-                    { title: "Mushishi" },
                     { title: "NANA" },
+					{ title: "Ouran High School Host Club" },
                     { title: "The Melancholy of Haruhi Suzumiya" },
                     { title: "Welcome to the NHK" }
                 ],
@@ -1101,7 +690,7 @@
             function generateAnimeGrid() {
                 gridContainer.innerHTML = '';
                 
-                for (let year = 2006; year <= 2024; year++) {
+                for (let year = 2005; year <= 2024; year++) {
                     if (!animeData[year]) continue;
                     
                     const yearRow = document.createElement('div');
@@ -1121,22 +710,15 @@
                         animeItem.dataset.year = year;
                         animeItem.dataset.index = index;
                         
-                        // Check if it's a placeholder
-                        if (/^0+$/.test(anime.title)) {
-                            animeItem.classList.add('placeholder');
-                        }
-                        
                         animeItem.innerHTML = `
                             <div class="anime-title">${anime.title}</div>
                         `;
                         
-                        // Only add click event for non-placeholders
-                        if (!animeItem.classList.contains('placeholder')) {
-                            animeItem.addEventListener('click', function() {
-                                this.classList.toggle('checked');
-                                updateProgress();
-                            });
-                        }
+                        animeItem.addEventListener('click', function() {
+                            this.classList.toggle('checked');
+                            saveSelections();
+                            updateProgress();
+                        });
                         
                         animeGrid.appendChild(animeItem);
                     });
@@ -1145,22 +727,68 @@
                     gridContainer.appendChild(yearRow);
                 }
                 
+                // Restore selections from localStorage
+                restoreSelections();
+                
                 // Initialize progress after generating grid
                 updateProgress();
             }
             
-            // Calculate total non-placeholder anime
+            // Save selections to localStorage
+            function saveSelections() {
+                const selections = {};
+                document.querySelectorAll('.anime-item').forEach(item => {
+                    const year = item.dataset.year;
+                    const index = item.dataset.index;
+                    
+                    if (!selections[year]) {
+                        selections[year] = [];
+                    }
+                    
+                    selections[year][index] = item.classList.contains('checked');
+                });
+                
+                localStorage.setItem('animeSelections', JSON.stringify(selections));
+            }
+            
+            // Restore selections from localStorage
+            function restoreSelections() {
+                const savedSelections = localStorage.getItem('animeSelections');
+                if (!savedSelections) return;
+                
+                try {
+                    const selections = JSON.parse(savedSelections);
+                    
+                    for (const year in selections) {
+                        const yearItems = selections[year];
+                        yearItems.forEach((isChecked, index) => {
+                            const item = document.querySelector(`.anime-item[data-year="${year}"][data-index="${index}"]`);
+                            if (item) {
+                                if (isChecked) {
+                                    item.classList.add('checked');
+                                } else {
+                                    item.classList.remove('checked');
+                                }
+                            }
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error restoring selections:', e);
+                }
+            }
+            
+            // Calculate total anime
             function calculateTotalAnime() {
                 let total = 0;
                 for (let year in animeData) {
-                    total += animeData[year].filter(anime => !/^0+$/.test(anime.title)).length;
+                    total += animeData[year].length;
                 }
                 return total;
             }
             
             // Calculate completed anime
             function calculateCompleted() {
-                return document.querySelectorAll('.anime-item.checked:not(.placeholder)').length;
+                return document.querySelectorAll('.anime-item.checked').length;
             }
             
             // Update progress bar and text
@@ -1186,11 +814,12 @@
                 progressText.textContent = message;
             }
             
-            // Select all non-placeholder anime
+            // Select all anime
             function selectAllAnime() {
-                document.querySelectorAll('.anime-item:not(.placeholder)').forEach(item => {
+                document.querySelectorAll('.anime-item').forEach(item => {
                     item.classList.add('checked');
                 });
+                saveSelections();
                 updateProgress();
             }
             
@@ -1199,6 +828,7 @@
                 document.querySelectorAll('.anime-item').forEach(item => {
                     item.classList.remove('checked');
                 });
+                saveSelections();
                 updateProgress();
             }
             
@@ -1231,13 +861,13 @@
             
             // Save as two images
             async function saveAsTwoImages() {
-                const baseName = 'Anime-Progress-' + new Date().toISOString().slice(0, 10);
+                const baseName = '20YearsofAnime';
                 const yearRows = Array.from(gridContainer.querySelectorAll('.year-row'));
                 
                 // Show export status
                 exportStatus.style.display = 'block';
                 
-                // Part 1: First 9 years (2006-2014) and progress bar
+                // Part 1: First 10 years (2005-2014) and progress bar
                 exportStatus.textContent = "Exporting images... Part 1/2";
                 const container1 = document.createElement('div');
                 container1.className = 'save-container';
@@ -1245,8 +875,8 @@
                 // Add progress section
                 container1.appendChild(progressSection.cloneNode(true));
                 
-                // Add first 9 years (2006-2014)
-                yearRows.slice(0, 9).forEach(row => {
+                // Add first 10 years (2005-2014)
+                yearRows.slice(0, 10).forEach(row => {
                     container1.appendChild(row.cloneNode(true));
                 });
                 
@@ -1258,7 +888,7 @@
                 container2.className = 'save-container';
                 
                 // Add remaining years (2015-2024)
-                yearRows.slice(9).forEach(row => {
+                yearRows.slice(10).forEach(row => {
                     container2.appendChild(row.cloneNode(true));
                 });
                 
@@ -1352,26 +982,18 @@
                 animate();
             }
             
-            // Update text colors
-            function updateTextColors() {
-                document.documentElement.style.setProperty('--anime-title-unselected', unselectedColorInput.value);
-                document.documentElement.style.setProperty('--anime-title-selected', selectedColorInput.value);
-            }
-            
             // Event listeners
             selectAllBtn.addEventListener('click', selectAllAnime);
             deselectAllBtn.addEventListener('click', deselectAllAnime);
             saveImageBtn.addEventListener('click', saveAsTwoImages);
-            unselectedColorInput.addEventListener('input', updateTextColors);
-            selectedColorInput.addEventListener('input', updateTextColors);
             
             // Initialize the app
             generateAnimeGrid();
             initEmberEffect();
             
-			// Set profile link
-			profileLink.href = "https://anilist.co/user/Batteredbutter/";
-			profileLink.title = "Batteredbutter's AniList Profile";
+            // Set profile link
+            profileLink.href = "https://anilist.co/user/Batteredbutter/";
+            profileLink.title = "Batteredbutter's AniList Profile";
         });
     </script>
 </body>
